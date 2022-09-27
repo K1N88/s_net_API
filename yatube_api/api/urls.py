@@ -1,8 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import SimpleRouter
-from rest_framework.authtoken import views
 
-from .views import PostViewSet, GroupViewSet, CommentViewSet
+from .views import PostViewSet, GroupViewSet, CommentViewSet, FollowViewSet
 
 router = SimpleRouter()
 router.register('posts', PostViewSet, basename='post')
@@ -14,8 +13,12 @@ router.register(
 )
 
 urlpatterns = [
-    path('api/v1/api-token-auth/', views.obtain_auth_token),
-    path('auth/', include('djoser.urls')),
-    path('auth/', include('djoser.urls.jwt')),
-    path('api/v1/', include(router.urls)),
+    path(
+        'v1/follow/',
+        FollowViewSet.as_view({'get': 'list','post': 'create'}),
+        name='follow'
+    ),
+    path('v1/', include('djoser.urls')),
+    path('v1/', include('djoser.urls.jwt')),
+    path('v1/', include(router.urls)),
 ]
