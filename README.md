@@ -43,3 +43,18 @@ python manage.py migrate
 ```
 python manage.py runserver
 ```
+
+Пример запроса на Получение публикаций:
+
+```
+GET /api/v1/posts/
+```
+
+Пример запроса на Добавление комментария:
+
+```
+POST /api/v1/posts/{post_id}/comments/
+{
+  "text": "string"
+}
+```
