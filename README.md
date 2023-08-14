@@ -1,15 +1,17 @@
-# api_final_yatube
+# s_net_API
+
+API для социальной сети по публикации личных дневников. 
 
 ### Как запустить проект:
 
 Клонировать репозиторий и перейти в него в командной строке:
 
 ```
-git clone https://github.com/K1N88/api_final_yatube.git
+git clone https://github.com/K1N88/s_net_API.git
 ```
 
 ```
-cd api_final_yatube
+cd s_net_API
 ```
 
 Cоздать и активировать виртуальное окружение:
